@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Ejemplo3</title>
+</head>
+<body>
+	<form name="form1">
+		<input type="button" value="validar" onclick="Comprobar()">
+		
+	</form>
+	<label for="FS"> Select a file smaller than 75kb:</label>
+	<input type="file" id="FS">
+</body>
+</html>
+<script type="text/javascript">
+	function Comprobar(){
+		var FS= document.getElementById('FS');
+		var files =FS.files;
+
+		if (files.lenght > 0) {
+			if (files[0].size > 75000)
+				FS.setCustomValidity("The select file must not be larger than 75kb");
+			alert(archivo no permitido)
+			else{
+				alert(archivo permitido)
+
+			}
+			return;
+
+		}
+	}
+
+FS.setCustomValidity("");
+Window.onload=function(){
+	document.getElementById("FS").onchange=checkFileSize;
+}
+</script>
